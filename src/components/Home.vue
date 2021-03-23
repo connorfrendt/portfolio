@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="image">
-            <img src="../../assets/connor_frendt_square.jpg" width="150px">
+            <img src="../assets/connor_frendt_square.jpg" width="150px">
         </div>
     </div>
 </template>
