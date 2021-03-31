@@ -2,12 +2,12 @@
   <div>
         <h3>EXPERIENCE</h3>
 
-            <button @click="collapsible()" id="hey">
+            <button @click="collapsible('experience')">
                 Database Developer | Pollinate | Portland, OR
                     <br />
                 December 2019 - August 2020
             </button>
-                <div v-show="clicked">
+                <div v-show="experienceButton">
                     As a Database Developer, I was transitioning to a software engineer within the company.  I assisted with software development projects for clients like Carhartt and Life is Good, as well as maintained their databases.  I was responsible for making data that's human readable to get output to the front-end.
                     I manipulated the data behind 100+ Under Armour garments per month, as well as helped out with the data for JBL speakers, Astro Headsets, and Bauer Hockey equipment, among others.
                 </div>
@@ -19,10 +19,10 @@
                 </p>
 
         <h3>TECHNICAL SKILLS</h3>
-            <button>
+            <button @click="collapsible('skills')">
                 Tech Stacks/Languages
             </button>
-            <div v-show="clicked">
+            <div v-show="skillsButton">
                 Languages:  HTML, CSS, Javascript, Python, SQL
                 <br />
                 Front End:  Vanilla JS, Vue.js, CSS Grid, CSS Flexbox
@@ -62,7 +62,9 @@
 export default {
     data() {
         return {
-            clicked: false,
+            experienceButton: false,
+            skillsButton: false,
+            // volunteerButton: false,
             schools: [
                 {
                     id: 'wwu',
@@ -92,10 +94,15 @@ export default {
         }
     },
     methods: {
-        collapsible(event) {
-            console.log(event.currentTarget.id, ' was clicked');
-            if(!this.clicked) this.clicked = true;
-            else this.clicked = false;
+        collapsible(value) {
+            console.log(value);
+            if(value === 'experience') {
+                this.experienceButton = true;
+            }
+            else if(value === 'skills') {
+                this.skillsButton = true;
+            }
+            // else this.clicked = false;
         }
     }
 }
