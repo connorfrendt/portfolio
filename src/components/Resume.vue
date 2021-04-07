@@ -2,12 +2,13 @@
   <div>
         <h3>EXPERIENCE</h3>
 
-            <button @click="collapsible('experience')">
-                Database Developer | Pollinate | Portland, OR
+            <!-- <button @click="collapsible('experience')"> -->
+                <b>Database Developer | Pollinate | Portland, OR</b>
                     <br />
                 December 2019 - August 2020
-            </button>
-                <div v-show="experienceButton">
+            <!-- </button> -->
+                <!-- <div v-show="experienceButton"> -->
+                <div>
                     As a Database Developer, I was transitioning to a software engineer within the company.  I assisted with software development projects for clients like Carhartt and Life is Good, as well as maintained their databases.  I was responsible for making data that's human readable to get output to the front-end.
                     I manipulated the data behind 100+ Under Armour garments per month, as well as helped out with the data for JBL speakers, Astro Headsets, and Bauer Hockey equipment, among others.
                 </div>
@@ -19,10 +20,11 @@
                 </p>
 
         <h3>TECHNICAL SKILLS</h3>
-            <button @click="collapsible('skills')">
+            <!-- <button @click="collapsible('skills')"> -->
                 Tech Stacks/Languages
-            </button>
-            <div v-show="skillsButton">
+            <!-- </button> -->
+            <!-- <div v-show="skillsButton"> -->
+            <div>
                 Languages:  HTML, CSS, Javascript, Python, SQL
                 <br />
                 Front End:  Vanilla JS, Vue.js, CSS Grid, CSS Flexbox
@@ -42,9 +44,11 @@
         <h3>EDUCATION</h3>
             <ul>
                 <li v-for="school in schools" :key="school.id">
-                    <div>{{ school.program }} | {{ school.gradDate }}</div>
+                    <div><b>{{ school.program }}</b> | {{ school.gradDate }}</div>
                     <div>{{ school.institution }} | {{ school.place }}</div>
                     <div>{{ school.description }}</div>
+                    <br />
+                    <br />
                 </li>  
             </ul>
 
@@ -95,14 +99,18 @@ export default {
     },
     methods: {
         collapsible(value) {
-            console.log(value);
-            if(value === 'experience') {
+            if(value === 'experience' && this.experienceButton === false) {
                 this.experienceButton = true;
             }
-            else if(value === 'skills') {
+            else if(value === 'experience' && this.experienceButton === true) {
+                this.experienceButton = false;
+            }
+            else if(value === 'skills' && this.skillsButton === false) {
                 this.skillsButton = true;
             }
-            // else this.clicked = false;
+            else if(value === 'skills' && this.skillsButton === true) {
+                this.skillsButton = false;
+            }
         }
     }
 }
@@ -111,5 +119,6 @@ export default {
 <style>
 h3 {
     text-align: center;
+    font-family: 'Acme', sans-serif;
 }
 </style>

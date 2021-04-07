@@ -18,5 +18,9 @@ export default {
 </script>
 
 <style>
-
+body {
+  margin: 0;
+  background-color: #8FD0E3;
+  height: 100%;
+}
 </style>

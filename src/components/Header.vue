@@ -1,9 +1,11 @@
 <template>
     <div id="header">
-        <RouterLink to="/" style="text-decoration: none">Home</RouterLink>
-        <RouterLink to="/resume">Resume</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-        <RouterLink to="/aboutme">About Me</RouterLink>
+        <div id="header-links">
+            <RouterLink to="/" class="router-links" style="text-decoration: none">Home</RouterLink>
+            <RouterLink to="/resume" class="router-links" style="text-decoration: none">Resume</RouterLink>
+            <RouterLink to="/projects" class="router-links" style="text-decoration: none">Projects</RouterLink>
+            <RouterLink to="/aboutme" class="router-links" style="text-decoration: none">About Me</RouterLink>
+        </div>
     </div>
 </template>
 
@@ -14,8 +16,19 @@ export default {
 </script>
 
 <style>
-#header {
+#header-links {
     display: flex;
     justify-content: space-around;
+    text-align: center;
+}
+
+.router-links {
+    width: 100%;
+    padding: 10px;
+}
+
+.router-links:hover {
+    background: #3B9CB8;
+    transition: 0.5s;
 }
 </style>
