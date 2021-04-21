@@ -1,11 +1,20 @@
 <template>
     <div id="home-body">
         
-        <div id="mypic">
-            <img id="my-pic" src="../assets/connor_frendt_square.jpg" width="150px">
+        <div id="pic-quote">
+
+            <div id="mypic">
+                <img id="my-pic" src="../assets/connor_frendt_square.jpg" width="150px">
+            </div>
+            
+            <div id="quote">
+                "Sometimes life is like a dark tunnel.<br />
+                You can't always see the light at the end of the tunnel,<br />
+                but if you just keep moving, <br />
+                you'll come to a better place."
+            </div>
+
         </div>
-        
-        <div id="asdf">"Sometimes life is like a dark tunnel.  You can't always see the light at the end of the tunnel, but if you just keep moving, you'll come to a better place."</div>
 
         <div id="footer">
             <div id="footer-links">
@@ -26,48 +35,34 @@ export default {
 <style>
 #home-body {
     display: grid;
-    grid-template: repeat(3, 1fr) / 1fr;
+    grid-template: repeat(2, 1fr) / 1fr;
+    height: calc(100vh - 38px);
+}
+
+#pic-quote {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: end;
 }
 
 #mypic {
-    background: blue;
-}
-
-#footer {
-    background: green;
-}
-
-#asdf {
-    background: red;
-}
-
-/* #mypic {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: right;
+    padding-right: 20px;
 }
 
 #my-pic {
-    border-radius: 500px;
+    border-radius: 200px;
+}
+
+#quote {
+    text-align: left;
+    padding-left: 20px;
+    font-family: 'Shadows Into Light', cursive;
+    
 }
 
 #footer {
-    bottom: 30px;
-    width: 100%;
+    text-align: center;
 }
 
-#footer-links {
-    display: flex;
-    justify-content: center;
-}
-
-a {
-    padding: 0 5px;
-    margin-bottom: 10px;
-}
-
-#gh-link {
-    border-left: 1px solid black;
-} */
 </style>
