@@ -1,6 +1,5 @@
 <template>
     <div>
-        <p></p>
             <ul>
                 <li>Outdoors</li>
                 <li>Martial arts, gymnastics, dance</li>

@@ -10,16 +10,20 @@
             <div id="quote">
                 "Sometimes life is like a dark tunnel.<br />
                 You can't always see the light at the end of the tunnel,<br />
-                but if you just keep moving, <br />
-                you'll come to a better place."
+                But if you just keep moving, <br />
+                You'll come to a better place."
             </div>
 
         </div>
 
         <div id="footer">
             <div id="footer-links">
-                <a href="https://www.linkedin.com/in/connorfrendt/"><img src="../assets/linkedin.png" style="height: 50px" /></a>
-                <a href="https://www.github.com/connorfrendt" id="gh-link"><img src="../assets/github.jpg" style="height: 50px" /></a>
+                <a href="https://www.linkedin.com/in/connorfrendt/" id="LI-pic">
+                    <img src="../assets/linkedin.png" style="height: 50px" />
+                </a>
+                <a href="https://www.github.com/connorfrendt">
+                    <img src="../assets/github.jpg" style="height: 50px" />
+                </a>
             </div>
         </div>
 
@@ -55,14 +59,23 @@ export default {
 }
 
 #quote {
+    display: flex;
+    align-items: center;
     text-align: left;
     padding-left: 20px;
-    font-family: 'Shadows Into Light', cursive;
-    
+    height: 150px;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
 }
 
 #footer {
+    position: absolute;
     text-align: center;
+    left: calc(50% - 50px);
+    bottom: 0;
 }
 
+#LI-pic {
+    padding-right: 10px;
+}
 </style>
