@@ -18,10 +18,10 @@
 
         <div id="footer">
             <div id="footer-links">
-                <a href="https://www.linkedin.com/in/connorfrendt/" id="LI-pic">
+                <a href="https://www.linkedin.com/in/connorfrendt/" id="LI-pic" target="_blank">
                     <img src="../assets/linkedin.png" style="height: 50px" />
                 </a>
-                <a href="https://www.github.com/connorfrendt">
+                <a href="https://www.github.com/connorfrendt" target="_blank">
                     <img src="../assets/github.jpg" style="height: 50px" />
                 </a>
             </div>

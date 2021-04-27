@@ -20,6 +20,7 @@ export default {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    font-family: 'Monda', sans-serif;
 }
 
 .router-links {
