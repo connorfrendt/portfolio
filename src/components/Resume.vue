@@ -1,29 +1,17 @@
 <template>
   <div>
+
         <h3>EXPERIENCE</h3>
-
-            <!-- <button @click="collapsible('experience')"> -->
-                <b>Database Developer | Pollinate | Portland, OR</b>
-                    <br />
-                December 2019 - August 2020
-            <!-- </button> -->
-                <!-- <div v-show="experienceButton"> -->
-                <div>
-                    As a Database Developer, I was transitioning to a software engineer within the company.  I assisted with software development projects for clients like Carhartt and Life is Good, as well as maintained their databases.  I was responsible for making data that's human readable to get output to the front-end.
-                    I manipulated the data behind 100+ Under Armour garments per month, as well as helped out with the data for JBL speakers, Astro Headsets, and Bauer Hockey equipment, among others.
-                </div>
-
-            <div><b>Database Developer Intern | Pollinate | Portland, OR</b></div>
-            <div><i>June 2019 - December 2020</i></div>
-                <p>
-                    As a Database Developer Intern, I got to learn the interrelations of all of Pollinate's databases, expand my SQL knowledge, and help with the data behind building out Under Armour garments.
-                </p>
+            <ul id="experience-list">
+                <li v-for="job in experience" :key="job.id" class="experience-item">
+                    <div><b>{{ job.title }}</b> | <i>{{ job.duration }}</i></div>
+                    <div>{{ job.company }} | {{ job.place }}</div>
+                    <div>{{ job.description }}</div>
+                </li>
+            </ul>
 
         <h3>TECHNICAL SKILLS</h3>
-            <!-- <button @click="collapsible('skills')"> -->
                 Tech Stacks/Languages
-            <!-- </button> -->
-            <!-- <div v-show="skillsButton"> -->
             <div>
                 Languages:  HTML, CSS, Javascript, Python, SQL
                 <br />
@@ -31,7 +19,7 @@
                 <br />
                 Back End: Node.js, Express.js
                 <br />
-                Databases: SQL, PostgreSQL, Mongoose/Mongo
+                Databases: SQL, PostgreSQL, Mongoose/MongoDB
                 <br />
                 Testing Suites: Jest, TDD
                 <br />
@@ -44,7 +32,7 @@
         <h3>EDUCATION</h3>
             <ul>
                 <li v-for="school in schools" :key="school.id">
-                    <div><b>{{ school.program }}</b> | {{ school.gradDate }}</div>
+                    <div><b>{{ school.program }}</b> | <i>{{ school.gradDate }}</i></div>
                     <div>{{ school.institution }} | {{ school.place }}</div>
                     <div>{{ school.description }}</div>
                     <br />
@@ -55,7 +43,7 @@
         <h3>VOLUNTEER</h3>
             <ul>
                 <li v-for="volunteer in volunteering" :key="volunteer.id">
-                    <div>{{ volunteer.company }} | {{ volunteer.place }}</div>
+                    <div><b>{{ volunteer.company }} | {{ volunteer.place }}</b></div>
                     <div>{{ volunteer.description }}</div>
                 </li>
             </ul>
@@ -69,6 +57,24 @@ export default {
             experienceButton: false,
             skillsButton: false,
             // volunteerButton: false,
+            experience: [
+                {
+                    id: 2,
+                    title: 'Database/Software Developer',
+                    company: 'Pollinate',
+                    place: 'Portland, OR',
+                    duration: 'December 2019 - August 2020',
+                    description: 'As a Database Developer, I was transitioning to a Software Engineer within the company.  I assisted with software development projects for clients like Carhartt and Life is Good, as well as maintained their databases.  I was responsible for making data that\'s human readable to get output to the front-end. I manipulated the data behind 100+ Under Armour garments per month, as well as helped out with the data for JBL speakers, Astro Headsets, and Bauer Hockey equipment, among others.'
+                },
+                {
+                    id: 1,
+                    title: 'Database Developer Intern',
+                    company: 'Pollinate',
+                    place: 'Portland, OR',
+                    duration: 'June 2019 - December 2019',
+                    description: 'As a Database Developer Intern, I got to learn the interrelations of all of Pollinate\'s databases, expand my SQL knowledge, and help with the data behind building out Under Armour garments.'
+                }
+            ],
             schools: [
                 {
                     id: 'wwu',
@@ -120,5 +126,24 @@ export default {
 h3 {
     text-align: center;
     font-family: 'Acme', sans-serif;
+}
+
+#experience-list {
+    background-image: url('../assets/pollinate.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.experience-item {
+    margin: 10px;
+    /* display: none; */
+    list-style: none;
+}
+
+.experience-item:hover {
+    display: block;
 }
 </style>
