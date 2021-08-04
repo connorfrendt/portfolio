@@ -2,8 +2,8 @@
   <div>
 
         <h3>EXPERIENCE</h3>
-            <ul id="experience-list">
-                <li v-for="job in experience" :key="job.id" class="experience-item">
+            <ul class="section-descriptors">
+                <li v-for="job in experience" :key="job.id" class="centered">
                     <div><b>{{ job.title }}</b> | <i>{{ job.duration }}</i></div>
                     <div>{{ job.company }} | {{ job.place }}</div>
                     <div>{{ job.description }}</div>
@@ -11,27 +11,16 @@
             </ul>
 
         <h3>TECHNICAL SKILLS</h3>
-                Tech Stacks/Languages
-            <div>
-                Languages:  HTML, CSS, Javascript, Python, SQL
-                <br />
-                Front End:  Vanilla JS, Vue.js, CSS Grid, CSS Flexbox
-                <br />
-                Back End: Node.js, Express.js
-                <br />
-                Databases: SQL, PostgreSQL, Mongoose/MongoDB
-                <br />
-                Testing Suites: Jest, TDD
-                <br />
-                Tools: Git, GitHub, Slack, Jira, Atlassian, BitBucket
-                <br />
-                Other: REST APIs, Responsive Web Design, Agile, OAuth, JSON Web Token
-            </div>
+            <ul class="section-descriptors">
+                <li v-for="skill in techSkills" :key="skill.id" class="centered">
+                    <div>{{ skill.title }}: {{ skill.names }}</div>
+                </li>
+            </ul>
 
 
         <h3>EDUCATION</h3>
-            <ul>
-                <li v-for="school in schools" :key="school.id">
+            <ul class="section-descriptors">
+                <li v-for="school in schools" :key="school.id" class="centered">
                     <div><b>{{ school.program }}</b> | <i>{{ school.gradDate }}</i></div>
                     <div>{{ school.institution }} | {{ school.place }}</div>
                     <div>{{ school.description }}</div>
@@ -41,8 +30,8 @@
             </ul>
 
         <h3>VOLUNTEER</h3>
-            <ul>
-                <li v-for="volunteer in volunteering" :key="volunteer.id">
+            <ul class="section-descriptors">
+                <li v-for="volunteer in volunteering" :key="volunteer.id" class="centered">
                     <div><b>{{ volunteer.company }} | {{ volunteer.place }}</b></div>
                     <div>{{ volunteer.description }}</div>
                 </li>
@@ -73,6 +62,43 @@ export default {
                     place: 'Portland, OR',
                     duration: 'June 2019 - December 2019',
                     description: 'As a Database Developer Intern, I got to learn the interrelations of all of Pollinate\'s databases, expand my SQL knowledge, and help with the data behind building out Under Armour garments.'
+                }
+            ],
+            techSkills: [
+                {
+                    id: 'languages',
+                    title: 'Languages',
+                    names: 'HTML, CSS, JavaScript, Python, SQL'
+                },
+                {
+                    id: 'front-end',
+                    title: 'Front End',
+                    names: 'Vanilla JS, VueJS, CSS Grid, CSS Flexbox'
+                },
+                {
+                    id: 'back-end',
+                    title: 'Back End',
+                    names: 'NodeJS, ExpressJS'
+                },
+                {
+                    id: 'databases',
+                    title: 'Databases',
+                    names: 'SQL, PostgreSQL, Mongoose/MongoDB'
+                },
+                {
+                    id: 'testing-suites',
+                    title: 'Testing Suites',
+                    names: 'Jest, TDD'
+                },
+                {
+                    id: 'tools',
+                    title: 'Tools',
+                    names: 'Git, GitHub, Slack, Jira, Atlassian, BitBucket'
+                },
+                {
+                    id: 'other',
+                    title: 'Other',
+                    names: 'REST APIs, Responsive Web Design, Agile, OAuth, JSON Web Token'
                 }
             ],
             schools: [
@@ -128,22 +154,13 @@ h3 {
     font-family: 'Acme', sans-serif;
 }
 
-#experience-list {
-    background-image: url('../assets/pollinate.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    color: white;
-    width: 50%;
+.section-descriptors {
+    width: 75%;
     margin: 0 auto;
-}
-
-.experience-item {
-    margin: 10px;
-    /* display: none; */
     list-style: none;
 }
 
-.experience-item:hover {
-    display: block;
+.centered {
+    margin: 0 auto;
 }
 </style>
