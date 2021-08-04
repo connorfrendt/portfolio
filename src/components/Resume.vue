@@ -1,41 +1,63 @@
 <template>
   <div>
+        <div class="section">
+            <fieldset>
+                <legend>
+                    <h3>EXPERIENCE</h3>
+                </legend>
+                
+                    <ul class="section-descriptors">
+                        <li v-for="job in experience" :key="job.id" class="descriptor">
+                            <div><b>{{ job.title }}</b> | <i>{{ job.duration }}</i></div>
+                            <div>{{ job.company }} | {{ job.place }}</div>
+                            <div>{{ job.description }}</div>
+                        </li>
+                    </ul>
+            </fieldset>
+        </div>
 
-        <h3>EXPERIENCE</h3>
-            <ul class="section-descriptors">
-                <li v-for="job in experience" :key="job.id" class="centered">
-                    <div><b>{{ job.title }}</b> | <i>{{ job.duration }}</i></div>
-                    <div>{{ job.company }} | {{ job.place }}</div>
-                    <div>{{ job.description }}</div>
-                </li>
-            </ul>
+        <div class="section">
+            <fieldset>
+                <legend>
+                    <h3>TECHNICAL SKILLS</h3>
+                </legend>
+                    <ul class="section-descriptors">
+                        <li v-for="skill in techSkills" :key="skill.id">
+                            <div>{{ skill.title }}: {{ skill.names }}</div>
+                        </li>
+                    </ul>
+            </fieldset>
+        </div>
 
-        <h3>TECHNICAL SKILLS</h3>
-            <ul class="section-descriptors">
-                <li v-for="skill in techSkills" :key="skill.id" class="centered">
-                    <div>{{ skill.title }}: {{ skill.names }}</div>
-                </li>
-            </ul>
+        <div class="section">
+            <fieldset>
+                <legend>
+                    <h3>EDUCATION</h3>
+                </legend>
+                    <ul class="section-descriptors">
+                        <li v-for="school in schools" :key="school.id" class="descriptor">
+                            <div><b>{{ school.program }}</b> | <i>{{ school.gradDate }}</i></div>
+                            <div>{{ school.institution }} | {{ school.place }}</div>
+                            <div>{{ school.description }}</div>
+                        </li>  
+                    </ul>
+            </fieldset>
+        </div>
 
-
-        <h3>EDUCATION</h3>
-            <ul class="section-descriptors">
-                <li v-for="school in schools" :key="school.id" class="centered">
-                    <div><b>{{ school.program }}</b> | <i>{{ school.gradDate }}</i></div>
-                    <div>{{ school.institution }} | {{ school.place }}</div>
-                    <div>{{ school.description }}</div>
-                    <br />
-                    <br />
-                </li>  
-            </ul>
-
-        <h3>VOLUNTEER</h3>
-            <ul class="section-descriptors">
-                <li v-for="volunteer in volunteering" :key="volunteer.id" class="centered">
-                    <div><b>{{ volunteer.company }} | {{ volunteer.place }}</b></div>
-                    <div>{{ volunteer.description }}</div>
-                </li>
-            </ul>
+        <div class="section">
+            <fieldset>
+                <legend>
+                    <h3>VOLUNTEER</h3>
+                </legend>
+                    <ul class="section-descriptors">
+                        <li v-for="volunteer in volunteering" :key="volunteer.id" class="descriptor">
+                            <div><b>{{ volunteer.company }} | {{ volunteer.place }}</b></div>
+                            <div>{{ volunteer.description }}</div>
+                        </li>
+                    </ul>
+            </fieldset>
+        </div>
+            
     </div>
 </template>
 
@@ -149,8 +171,11 @@ export default {
 </script>
 
 <style>
+.section {
+    margin: 20px;
+}
+
 h3 {
-    text-align: center;
     font-family: 'Acme', sans-serif;
 }
 
@@ -160,7 +185,7 @@ h3 {
     list-style: none;
 }
 
-.centered {
-    margin: 0 auto;
+.descriptor {
+    padding-bottom: 10px;
 }
 </style>
