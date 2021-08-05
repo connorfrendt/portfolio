@@ -115,7 +115,7 @@ export default {
                 {
                     id: 'tools',
                     title: 'Tools',
-                    names: 'Git, GitHub, Slack, Jira, Atlassian, BitBucket'
+                    names: 'Git, GitHub, Heroku, Slack, Jira, Atlassian, BitBucket'
                 },
                 {
                     id: 'other',
