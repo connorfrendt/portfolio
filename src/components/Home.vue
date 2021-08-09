@@ -22,7 +22,7 @@
                     <img src="../assets/linkedin.png" style="height: 50px" />
                 </a>
                 <a href="https://www.github.com/connorfrendt" target="_blank">
-                    <img src="../assets/github.jpg" style="height: 50px" />
+                    <img src="../assets/github.jpg" style="height: 50px; border-radius: 5px;" />
                 </a>
             </div>
         </div>

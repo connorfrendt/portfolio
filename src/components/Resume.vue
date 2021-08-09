@@ -23,7 +23,7 @@
                 </legend>
                     <ul class="section-descriptors">
                         <li v-for="skill in techSkills" :key="skill.id">
-                            <div>{{ skill.title }}: {{ skill.names }}</div>
+                            <div>{{ skill.title }} | {{ skill.names }}</div>
                         </li>
                     </ul>
             </fieldset>
@@ -125,21 +125,22 @@ export default {
             ],
             schools: [
                 {
-                    id: 'wwu',
-                    institution: 'Western Washington University',
-                    gradDate: 'Dec 2017',
-                    program: 'B.S. in Mathematics',
-                    place: 'Bellingham, WA',
-                    description: '5 years of single and multivariable calculus, with linear algebra, systems of partial differential equations, and forier analysis.'
-                },
-                {
                     id: 'alchemy',
                     institution: 'Alchemy Code Lab',
                     gradDate: 'Feb 2019',
                     program: 'Full Stack Software Engineering',
                     place: 'Portland, OR',
                     description: '5-6 months of 60-70 hour work weeks learning Full Stack Javascript'
+                },
+                {
+                    id: 'wwu',
+                    institution: 'Western Washington University',
+                    gradDate: 'Dec 2017',
+                    program: 'B.S. in Mathematics',
+                    place: 'Bellingham, WA',
+                    description: '5 years of single and multivariable calculus, with linear algebra, systems of partial differential equations, and forier analysis.'
                 }
+                
             ],
             volunteering: [
                 {
