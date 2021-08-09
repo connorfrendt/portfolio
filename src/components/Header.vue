@@ -26,13 +26,10 @@ export default {
 .router-links {
     width: 100%;
     padding: 10px;
-    /* background: #A1A1A1; */
     text-decoration: none;
 }
 
 .router-links:hover {
-    /* background: #96785E; */
     text-decoration: underline;
-    transition: 0.5s;
 }
 </style>
