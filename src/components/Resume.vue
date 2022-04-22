@@ -9,6 +9,7 @@
                     <ul class="section-descriptors">
                         <li v-for="job in experience" :key="job.id" class="descriptor">
                             <div><b>{{ job.title }}</b> | <i>{{ job.duration }}</i></div>
+                            <div><i>{{ job.type }}</i></div>
                             <div>{{ job.company }} | {{ job.place }}</div>
                             <div>{{ job.description }}</div>
                         </li>
@@ -70,20 +71,31 @@ export default {
             // volunteerButton: false,
             experience: [
                 {
+                    id: 3,
+                    title: 'Administration Specialist (Contract)',
+                    type: 'Contract',
+                    company: 'Vetsource',
+                    place: 'Portland, OR',
+                    duration: 'October 2021 - December 2021',
+                    description: 'I called 5 - 10 veterinary practices per day, I used Salesforce to keep the data up to date for those practices, and I sent out documents via Salesforce & Docusign.'
+                },
+                {
                     id: 2,
                     title: 'Database/Software Developer',
-                    company: 'Pollinate',
+                    type: 'Full Time'
+,                   company: 'Pollinate',
                     place: 'Portland, OR',
                     duration: 'December 2019 - August 2020',
                     description: 'As a Database Developer, I was transitioning to a Software Engineer within the company.  I assisted with software development projects for clients like Carhartt and Life is Good, as well as maintained their databases.  I was responsible for making data that\'s human readable to get output to the front-end. I manipulated the data behind 100+ Under Armour garments per month, as well as helped out with the data for JBL speakers, Astro Headsets, and Bauer Hockey equipment, among others.'
                 },
                 {
                     id: 1,
-                    title: 'Database Developer Intern',
+                    title: 'Database Developer (Contract)',
+                    type: 'Contract',
                     company: 'Pollinate',
                     place: 'Portland, OR',
                     duration: 'June 2019 - December 2019',
-                    description: 'As a Database Developer Intern, I got to learn the interrelations of all of Pollinate\'s databases, expand my SQL knowledge, and help with the data behind building out Under Armour garments.'
+                    description: 'As a Database Developer, I got to learn the interrelations of all of Pollinate\'s databases, expand my SQL knowledge, and help with the data behind building out Under Armour garments.'
                 }
             ],
             techSkills: [
@@ -151,23 +163,24 @@ export default {
                 }
             ]
         }
-    },
-    methods: {
-        collapsible(value) {
-            if(value === 'experience' && this.experienceButton === false) {
-                this.experienceButton = true;
-            }
-            else if(value === 'experience' && this.experienceButton === true) {
-                this.experienceButton = false;
-            }
-            else if(value === 'skills' && this.skillsButton === false) {
-                this.skillsButton = true;
-            }
-            else if(value === 'skills' && this.skillsButton === true) {
-                this.skillsButton = false;
-            }
-        }
     }
+    // ,
+    // methods: {
+    //     collapsible(value) {
+    //         if(value === 'experience' && this.experienceButton === false) {
+    //             this.experienceButton = true;
+    //         }
+    //         else if(value === 'experience' && this.experienceButton === true) {
+    //             this.experienceButton = false;
+    //         }
+    //         else if(value === 'skills' && this.skillsButton === false) {
+    //             this.skillsButton = true;
+    //         }
+    //         else if(value === 'skills' && this.skillsButton === true) {
+    //             this.skillsButton = false;
+    //         }
+    //     }
+    // }
 }
 </script>
 
@@ -187,6 +200,9 @@ h3 {
 }
 
 .descriptor {
-    padding-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 </style>
